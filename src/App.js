@@ -1,25 +1,81 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// function App(){
+//   const [mystate , setMystate] = useState(0)
+//   const clickHandler = ()=>{
+//     setMystate(mystate+1)
+//   }
+//   return(
+//     <>
+//       <h1>state value : {mystate}</h1>
+//       <button onClick={clickHandler}>click</button>
+//     </>
+//   )
+// }
+
+// ------------------------------------
+
+// function App(){
+//   const [mystate , setMystate] = useState(0)
+//   const clickHandler = ()=>{
+//     // setMystate((prevState)=>{
+//     //   return prevState+1
+//     // })
+//     setMystate(prevState=>prevState+1)
+//   }
+//   return(
+//     <>
+//       <h1>state value : {mystate}</h1>
+//       <button onClick={clickHandler}>click</button>
+//     </>
+//   )
+// }
+
+// ------------------------------------
+
+// function App(){
+//   const [mystate , setMystate] = useState(0)
+//   const clickHandler = ()=>{
+//     console.log(mystate)
+//     setMystate(mystate+1)
+//     setMystate(mystate+1)
+//     setMystate(mystate+1)
+//     console.log(mystate)
+//   }
+
+//   useEffect(()=>{
+//     console.log(mystate)
+//     console.log('render')
+//   })
+//   return(
+//     <>
+//       <h1>state value : {mystate}</h1>
+//       <button onClick={clickHandler}>click</button>
+//     </>
+//   )
+// }
+// --------------------------------------------------
+
+function App(){
+  const [mystate , setMystate] = useState(0)
+  const clickHandler = ()=>{
+    console.log(mystate)
+    setMystate(prevState =>prevState+1)
+    setMystate(prevState =>prevState+1)
+    setMystate(prevState =>prevState+1)
+    console.log(mystate)
+  }
+
+  useEffect(()=>{
+    console.log(mystate)
+    console.log('render')
+  })
+  return(
+    <>
+      <h1>state value : {mystate}</h1>
+      <button onClick={clickHandler}>click</button>
+    </>
+  )
 }
 
-export default App;
+export default App
